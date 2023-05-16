@@ -206,12 +206,12 @@ describe('Edit Organisation', () => {
   });
 
   it('should copy the organization URL to clipboard', async () => {
+    const { user } = setup();
     Object.defineProperty(navigator, 'clipboard', {
       value: {
         writeText: jest.fn().mockImplementation(() => Promise.resolve()),
       },
     });
-    const { user } = setup();
     await waitFor(() => expect(screen.getByText('Manage organization')).toBeInTheDocument());
     await user.click(screen.getAllByRole('button')[2]);
     await waitFor(async () =>
