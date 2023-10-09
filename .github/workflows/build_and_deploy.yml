@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - deployment/naxa
+    paths:
+      - 'frontend/**'
   workflow_dispatch:
 
 jobs:
@@ -25,5 +27,5 @@ jobs:
             echo '==In Server=='
             cd /home/ubuntu/Projects/tasking-manager
             git pull naxa deployment/naxa
-            docker compose build --no-cache
+            docker compose build --no-cache frontend
             docker compose up -d --force-recreate
