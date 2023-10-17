@@ -16,7 +16,7 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
 
-      - name: Recreate Services
+      - name: SSH Run command
         uses: appleboy/ssh-action@master
         with:
           host: ${{ vars.SERVER_IP }}
@@ -29,6 +29,8 @@ jobs:
             cd /home/ubuntu/Projects/tasking-manager
             git pull naxa deployment/naxa
             cd /home/ubuntu/Projects/tasking-manager/frontend
+            source ~/.bashrc
+            nvm i 16
             nvm use 16
             npm i -g yarn
             yarn install
