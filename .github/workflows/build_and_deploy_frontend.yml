@@ -24,12 +24,12 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           command_timeout: 20m
           script: |
+            #!/bin/bash -i
             echo '==In Server=='
             echo '==Building Frontend=='
             cd /home/ubuntu/Projects/tasking-manager
             git pull naxa deployment/naxa
             cd /home/ubuntu/Projects/tasking-manager/frontend
-            source ~/.bashrc
             nvm i 16
             nvm use 16
             npm i -g yarn
