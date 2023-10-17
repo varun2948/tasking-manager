@@ -27,6 +27,8 @@ jobs:
             #!/bin/bash -i
             echo '==In Server=='
             echo '==Building Frontend=='
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
             cd /home/ubuntu/Projects/tasking-manager
             git pull naxa deployment/naxa
             cd /home/ubuntu/Projects/tasking-manager/frontend
