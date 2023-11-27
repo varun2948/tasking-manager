@@ -84,6 +84,7 @@ function generateStartingHash({ comment, presets, gpxUrl, powerUser, imagery }) 
   return hashParams;
 }
 
+
 /**
  * Resize rapid
  * @param {Context} rapidContext The rapid context to resize
